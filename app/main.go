@@ -15,7 +15,7 @@ func main() {
 	imageName, command,	args := parseArgs(os.Args[1:])
 	dir, err := os.MkdirTemp("", "tmp")
 	if err != nil {
-		fmt.Printf("Err: %v", err)
+		fmt.Printf("mkdir: %v", err)
 		os.Exit(1)
 	}
 	imageClient := newDockerImageClient(imageName, dir)
@@ -38,7 +38,7 @@ func main() {
 	}
 	err = cmd.Run()
 	if err != nil {
-		fmt.Printf("Err: %v", err)
+		fmt.Printf("cmd run: %v", err)
 		os.Exit(cmd.ProcessState.ExitCode())
 	}
 }

@@ -9,3 +9,5 @@
 module github.com/codecrafters-io/docker-starter-go
 
 go 1.22
+
+require golang.org/x/sync v0.7.0
